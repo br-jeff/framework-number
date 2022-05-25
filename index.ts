@@ -1,6 +1,14 @@
-#! /usr/bin/env node
 import { cyanLog, yellowLog } from './src/utils/console_messages'
-const argNumber = process.argv[2]
+import { validator } from './src/domain/validator'
 
-cyanLog('########################### Bem Vindo ########################### ')
-yellowLog(`Número escolhido: ${argNumber}`)
+function welcomeMessage(): void {
+    cyanLog('########################### Bem Vindo ########################### ')
+    yellowLog(`Número escolhido: ${argNumber}`)
+}
+
+const argNumber = process.argv[2]
+welcomeMessage()
+validator(argNumber)
+
+const number = parseInt(process.argv[2])
+
