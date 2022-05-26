@@ -1,14 +1,14 @@
-import { cyanLog, yellowLog } from './src/utils/console_messages'
 import { validator } from './src/domain/validator'
+import { primeNumbers } from './src/domain/use_cases/prime_numbers'
+import { divisibleNumbers } from './src/domain/use_cases/divisible_numbers'
+import { welcomeMessage, finishMessage} from './src/utils/console/information_messages'
 
-function welcomeMessage(): void {
-    cyanLog('########################### Bem Vindo ########################### ')
-    yellowLog(`Número escolhido: ${argNumber}`)
-}
-
-const argNumber = process.argv[2]
-welcomeMessage()
+const argNumber: string = process.argv[2]
+welcomeMessage(argNumber)
 validator(argNumber)
 
-const number = parseInt(process.argv[2])
+const numeratorNumber: number = parseInt(process.argv[2])
+const getDivisbleNumbers = divisibleNumbers(numeratorNumber)
+const getPrimes = primeNumbers(getDivisbleNumbers)
 
+finishMessage(getDivisbleNumbers, getPrimes)
