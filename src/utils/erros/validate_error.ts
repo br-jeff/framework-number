@@ -1,4 +1,4 @@
-import { errorLog } from '../console_messages'
+import { errorLog } from '../console/console_colors'
 
 export class ValidatorError extends Error {
     constructor(message : string) {
