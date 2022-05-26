@@ -1,7 +1,5 @@
 import { primeNumbers } from "../src/domain/use_cases/prime_numbers";
 
-
-
 describe('should test primeNumbers', () => {
     it('should return prime numbers', () => {
         const numbers: number[] = [1,3,5,9,15,45]
@@ -18,7 +16,6 @@ describe('should test primeNumbers', () => {
 
         expect(result).toEqual(expectedPrimeNumbers)
     })
-
 
     it('should not show duplicated numbers', () => {
         const numbers: number[] = [20, 20, 13, 13, 9, 9, 3, 3, 3, 3]

@@ -17,5 +17,5 @@ export function primeNumbers(numbers: number[]): number[] {
         }
     })
 
-    return primeNumbers
+    return  [...new Set(primeNumbers)].sort((a, b) => a - b)
 }
