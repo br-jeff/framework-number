@@ -1,17 +1,17 @@
-import { ValidatorError } from '../utils/erros/validate_error'
+import { ValidatorError} from '../utils/erros/validator'
 
-export function validator(argNumber: string) {
+export function validator(argNumber: string, type: 'web' | 'cli') {
+    
     const number: number = parseInt(argNumber)
 
     if(Number.isNaN(number)) {
-        throw new ValidatorError(`Erro o parâmetro não é um número`)
+        return new ValidatorError(`Erro o parâmetro não é um número`, type)
     }
     if(number < 0) {
-        throw new ValidatorError(`Erro o número não pode ser negativo`)
+        return new ValidatorError(`Erro o número não pode ser negativo`, type)
     }
 
     if(number < 2 && number >= 0) {
-        throw new ValidatorError(`Error o número  não pode ser "${number}"`)
+        return new ValidatorError(`Error o número não pode ser "${argNumber}"`, type)
     }
-
 }
