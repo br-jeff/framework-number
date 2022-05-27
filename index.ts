@@ -5,7 +5,7 @@ import { welcomeMessage, finishMessage} from './src/utils/console/information_me
 
 const argNumber: string = process.argv[2]
 welcomeMessage(argNumber)
-validator(argNumber)
+validator(argNumber, 'cli')
 
 const numeratorNumber: number = parseInt(process.argv[2])
 const getDivisbleNumbers = divisibleNumbers(numeratorNumber)
