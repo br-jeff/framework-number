@@ -1,9 +1,6 @@
 # Requerimentos
 Node 16.15.0 ou maior.
 
-
-# Como usar
-
 ## Linha de comando
 npm run divide NUMERO
 Exemplo: npm run divide 45
